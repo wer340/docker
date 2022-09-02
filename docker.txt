@@ -1,0 +1,8 @@
+docker rm hash
+docer rmi  hello-world    remove imaage    image like a iso 
+docker container prune  close all container
+--rm   automaticaly close  
+
+--help 
+
+docker images

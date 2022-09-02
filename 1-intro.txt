@@ -1,0 +1,46 @@
+1----
+▶docker version
+download docker
+https://docs.docker.com/get-docker/
+sys requirement
+and  hyper-v  and container windows featured must be enabled
+make sure docker engine runing  before going forward 
+run two model app  with diffrent envirement in same computer 
+4----
+technicallly container just process container dont contain full bllown os  
+container on host share os host accuretlly container share the kenel the os host 
+every os have  own os and kernel 
+✅ that mean in linux machine only have linux container beacuse the container is linux 
+and windows machine  however  both  linux and  windos runing container because win 10 custom shipped from linux kernel 
+this is in addition to  windows kernel tahts always with windows its not replacment so linux kernel nativly on window 
+  mac in vm linux run container
+6----
+docker file is plain text file include instruction  docker uses to package of application needs to run  that packed term of img
+we tell docker to start container useing that iamge container with process provide package in image
+in local machine load    with  ▶docker run ...
+ docker  dockerhub its like  to git  and github 
+docker regisatery like docker hub 
+
+7----
+make Dockerfile   without extension
+✅✅in Dockerfile
+▶FROM node:alphine   this base image  as bunch of file we gonna take by file and add aditional file suit like a inhertance in programming
+node a official image in docker hub  alphine  is lightest ditrbution of linux
+▶COPY ./app  we gonna copy all the file   in the current directory  into app directory 
+to that image so that iamge is file sys   in file sys we gonna directory call app 
+WORKDIR /app   app dir
+▶CMD  which command run
+✅we go to terminal 
+tell to docker  package of application  we need to tack  for identidfier here specify name  and address directory
+▶docker build -t hello-docker .   dot[current directory]
+image not store current dir
+ docker store file very complex  dont worry about it
+▶docker image ls
+▶docker run hello-docker
+i can publish in docker hub   and any caputer  can do it 
+https://labs.play-with-docker.com/
+this is site   run docker 
+
+▶docker pull codewithmosh/hello-docker
+▶docker image ls
+▶docker run codewithmosh/hello-docker
