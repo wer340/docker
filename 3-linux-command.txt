@@ -1,0 +1,194 @@
+1----
+docker built on basic linux concept
+
+3----
+sure that you place in ~ 
+echo "alias docker='winpty docker'" >> ~/.bashrc
+echo "alias docker='winpty docker'" >> ~/.bash_profile
+docker pull ubuntu or ▶docker run ubuntu   automate download  id not longer in locally
+▶docker ps    see running container 
+▶docker ps   -a   all  we can see stop container as well
+docker run -it ubuntu   short of interactive 
+its connect to shell 
+root@2f759e6996e9:/#  
+✅root represent is current user  by deafult login root 
+✅after @  name of machine 
+after colon :  /[forward slash] that represent where we are in file system  forward slash is root directory
+# pound sign   denote you have highest privilges at login in root user  if normal user  is $ sign
+ linux comman
+▶echo hello
+▶whoami   //root
+▶echo $0  //bin/bash  see location of shell progra
+linux is case senstive  mean sense upper and lowwer case
+▶history   // 1   2 whoami  3 echo $0     ✅ 
+✅then number of row history reply again
+▶!2   //whoami root  second history run again  
+
+4---package manager  apt  adavance package tools
+error when  ▶apt install package [aaaexample:nano]  ❌unable to package nano 
+linux have data base  thats  hundered package but not all package install 
+▶apt list  see all package 
+infront of packages   [installed,local] 
+with ▶apt update     update package  data baase linux    then  ▶apt install nano
+▶ctrl + l    clear screen
+▶apt remove nano
+6---navigate linux file sys
+▶pwd   print work dir
+▶ls   list
+▶ls -1  
+▶ls -l long list more detail
+▶cd cahnge dir
+▶cd  relative path    or   absoulte dir  first  start with /
+▶cd ..  level up
+▶ls /bin    see  list into dir
+▶cd ~  tildy we go to home dir
+▶cd /root  we go to home dir
+
+
+7---manipulate 
+▶mkdir test      make dir
+▶mv test docker    mv [move]rename from test to docker
+▶touch filename    make file
+▶mv hello.txt docker.txt  rename 
+▶rm file*   remove aall file
+▶rm -r dirname    r[recurse]  remove dir
+
+
+8--- editing and view file
+▶cat file   see into file 
+▶more file  see into file   page to page  for  so many line code press ▶q key  for exit
+▶apt install less
+▶less file      view content long file to interactve way  
+head -n 5 file   ✔ first few line from head to 5line  by deafult 10 line
+tail -n 5 file    ✔last 5 line thats end up file
+
+9--- redirection   
+✅✅✅> sign [grater than]   the redirect output
+▶cat file1.txt > file2.txt    cat read  file 1  then write to file2
+▶ls -l > name.txt   read list dir  and write in name.txt
+▶echo ahello > hello.txt   read echo and write hello.txt
+✅✅✅< sign [less than]  the satandaard the redirect input
+
+10---searching of text
+grep    global regulaar expression print 
+▶grep -i hello file1.txt    ✅i[insensive] hello or HELLO Hello
+▶grep -i  hello file1.txt   file2.txt     ✅multiple file search
+▶grep -i hello file*   wildcard   all file search
+▶grep -i hello .   refer current dir search
+▶grep -i -r hello . refer current dir and sub dir search  r[recursive]
+✅✅in linux can combine option    ▶ -i insensitive and ▶-r recursive  term of ▶-ir
+
+11---find file
+▶find   ✅find file dir  
+▶ls -a    all file   show  +hidden file 
+▶find /etc 
+▶find  -type d  ✅filter dir with sub dir
+▶find  -type f  ✅flter  pure file no dir
+▶find -type f -name "f*"   ✅file  [and] name start with lower f
+▶find -type f -iname "f*" ✅file  [and] name start with lower f or upper F
+▶find / -type f -iname "*.py"   ✅start with root dir [and] file  [and]  py extension 
+
+12----chainning command and combine
+▶mkdir test; cd test; echo "done"   ✅if  a command erro   but rest command run  no relate together
+▶mkdir test && cd test && echo "done"  ✅if  a command erro  rest command not executed
+▶mkdir test ||  echo "dir existed"    ✅just one of them command run 
+✔✔✔pipe |
+▶ls  /bin | less 
+▶ls /bin | head -n 7  by deafult 10 line
+✅✅✅break up along chain  to other line for better look   use backslash[\]
+▶mkdir test;\
+>cd test;\
+>echo "done"
+✅✅✅✅
+13---Envionment variables
+▶printenv   all valubale see
+one of them important variable  is  path 
+sometime you install package like python  then write code    show up error thats command not found
+this path linux  or window a search  program . for  add new address  [:] colon added then write directory address
+▶printenv PATH
+▶echo $PATH
+▶export DB_USER=emilia
+however this session  hold this variable
+▶printenv DB_USER
+if  will  ▶exit terminal session then aagain run terminal  this avariable not exist
+✅✅✅▶docker  ps   see docker process  
+▶docker  ps  -a   all stop container 
+✅✅✅▶docker start -i 2f7   3 letter of hash
+▶echo DB_USER=emilia >> .bashrc   svae variable to permanently
+for   svae  variaable  if  run variable ▶echo $DB_USER   not show up because  close terminal  again start till bashrc code reload
+or  write this command  till reload bashrc 
+✅✅✅▶ source .bashrc
+▶ source ~/.bashrc  if you dont 
+
+14--- managing process
+✅✅✅▶ps 
+every process have uniqe identifier PID
+Teletype tty   
+pts/0  
+this use terminal is psudo terminal   so pts/0 that represent  first terminal window
+wich termial  login 
+time  amount  of proceess consume by cpu .✅often  tasks is light weight   no taking time from cpu 
+▶sleep 30  second
+▶sleep 300 &   //[1 baash pid][38 sleep pid] execute other command  show PID 
+if run  
+▶ps
+time again 00:00
+✅✅✅▶kill 38  [PID]
+
+15----maanaging user 
+🦟🦟useradd     / original API  adduser command  diffrence with command
+usermod    /modify
+userdel   /delete
+this above word type  help show up for complete command
+▶useradd -m emilia
+▶cat /etc/passwd   see emilia:x[password]:1001[user id]:1001[group id]:/home/emila:/bin/sh [sh]=> (old original program)  bash enhance of shell program
+▶usermod -s /bin/bash emilia   ▶bash as program  change with shell
+✅✅✅▶cat /etc/shadow  
+this where password are stored in encrypted format this file is accessble  by root user
+▶docker ps
+✅✅✅aaaaaaaaa▶docker exec -it -u emilia 2f759e6996e9 bash     emilia@2f759e6996e9:/$  dollar sign  im not root user im regular user
+▶userdel emilia    
+🦟🦟another command  adduser   
+▶adduser jenifer
+new password :
+and specify other option 
+
+16--- managing group
+groupadd
+groupmod
+groupdel
+▶groupadd developers
+we  use group for all user  have same premission
+▶cat /etc/group
+ every linux user one primary group and zero or more suplementary group  why are group  seprataor
+lets  emilia part of 5 group  and what create new file every file has one group and one user if  emilia has 5 of goup
+wich group should be used only the new file thats emila  has created  thats one  primaary group
+primary group automaticaly create with created new user its group same name in the users 
+so here im option to set suplementary group for emila so 
+✅✅▶usermod -G developers emila
+▶cat /etc/passwd | grep emila   [or] ▶grep emila /etc/passwd   ✅emila:x:1001:1001::/home?emila:/bin/bash
+✅✅▶groups emila  ✅emila : emila :developers   two group one of them primary  rest group suplmentary group show  groups of emila
+
+17---file permission
+root@2f759e6996e9:/home# 
+file call deploy.sh   this file is shell script so we can combine all this command and create  in deploy.sh 
+echo echo hello >deploy.sh
+ls -l 
+drwxr-xr-x
+-rw-r--r-- 
+d  is directory 
+-  thats mean this is file
+9 letter what does mean? divide 3 group
+in each group have read write and execute permision
+we have -[hyphen] rather than rwx -->✔r-x ✔ r--  ✔... 
+in directory  x means  thats can go into directory 
+so we can use cd command by deafult all dir x permision enable  
+3 group??? one group use user permission   second primary group user with same name user  third else group suplementry
+✅✅✅change mod 
+chmod u  user 
+chmod g  group
+chmod o  other 
+▶chmod u+x  deploy.sh    for subtract  u-x
+if  also combine group 
+▶chmod og+x+w-r deploy.sh     execute and write added  read substract
+ 
