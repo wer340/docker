@@ -1,0 +1,27 @@
+1----solid understand  from imaage  docker
+
+2---images and containers
+ ✅iamge  include every thing of apllication need to run 
+✔a cut down os  ✔third party  ✔application file ✔environment variable
+ so image contain all the file of configuration setting needed to run app once we have image  we can strart container from it 
+✅containers  a container like a virtual machine 
+✔provides an isolated environment    ✔can be stopped & restarted   ✔is just a process  which is provided by image
+each container isoulated environment 
+a container gets file sys at image  each container has layout layer 
+3----file simple react
+install node 
+npm install
+npm start
+
+4----docker file instruction
+a docker file contains instructions for building an image 
+✅FROM base image 
+✅WORKDIR  specify your workspace dir  all file command working in dir
+✅COPY   copy file as dir 
+✅ADD
+✅RUN
+✅ENV  set eviremonet variable 
+✅EXPOSE  telling docker and container  satarting  given port
+✅USER  limited privilages
+✅CMD  command should be executed  let me start container
+✅ENTRYPOINT

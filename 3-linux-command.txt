@@ -141,12 +141,12 @@ usermod    /modify
 userdel   /delete
 this above word type  help show up for complete command
 ▶useradd -m emilia
-▶cat /etc/passwd   see emilia:x[password]:1001[user id]:1001[group id]:/home/emila:/bin/sh [sh]=> (old original program)  bash enhance of shell program
+▶cat /etc/passwd   see emilia:x[password]:1001[user id]:1001[group id]::/home/emila:/bin/sh [sh]=> (old original program)  bash enhance of shell program
 ▶usermod -s /bin/bash emilia   ▶bash as program  change with shell
 ✅✅✅▶cat /etc/shadow  
 this where password are stored in encrypted format this file is accessble  by root user
 ▶docker ps
-✅✅✅aaaaaaaaa▶docker exec -it -u emilia 2f759e6996e9 bash     emilia@2f759e6996e9:/$  dollar sign  im not root user im regular user
+✅✅✅▶docker exec -it -u emilia 2f759e6996e9 bash     emilia@2f759e6996e9:/$  dollar sign  im not root user im regular user
 ▶userdel emilia    
 🦟🦟another command  adduser   
 ▶adduser jenifer

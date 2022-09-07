@@ -32,7 +32,7 @@ WORKDIR /app   app dir
 ▶CMD  which command run
 ✅we go to terminal 
 tell to docker  package of application  we need to tack  for identidfier here specify name  and address directory
-▶docker build -t hello-docker .   dot[current directory]
+▶docker build -t hello-docker .   t[tag] dot[current directory]
 image not store current dir
  docker store file very complex  dont worry about it
 ▶docker image ls
