@@ -148,7 +148,7 @@ this where password are stored in encrypted format this file is accessble  by ro
 ▶docker ps
 ✅✅✅▶docker exec -it -u emilia 2f759e6996e9 bash     emilia@2f759e6996e9:/$  dollar sign  im not root user im regular user
 ▶userdel emilia    
-🦟🦟another command  adduser   
+🦟🦟another command  adduser    
 ▶adduser jenifer
 new password :
 and specify other option 
